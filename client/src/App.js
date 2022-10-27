@@ -1,11 +1,14 @@
+import { BrowserRouter } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 import "./styles/partials/_resets.scss";
 
 function App() {
   return (
-    <section className="wrapper">
-      <Sidebar />
-    </section>
+    <BrowserRouter>
+      <section className="wrapper">
+        <Sidebar />
+      </section>
+    </BrowserRouter>
   );
 }
 
