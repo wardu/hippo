@@ -1,8 +1,10 @@
+@use "../partials/fonts" as *;
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Roboto";
 }
 
 html {
