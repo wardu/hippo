@@ -1,0 +1,21 @@
+.sidebar {
+  padding: 2rem;
+  width: 20vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    margin-top: 1.6rem;
+  }
+  &__text {
+    padding-left: 1rem;
+  }
+}
