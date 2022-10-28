@@ -1,5 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import "./styles/partials/_resets.scss";
+
 function App() {
-  return <></>;
+  return (
+    <BrowserRouter>
+      <section className="wrapper">
+        <Sidebar />
+      </section>
+    </BrowserRouter>
+  );
 }
 
 export default App;
