@@ -4,7 +4,6 @@ import Dashboard from "./Components/Dashboard/Dashboard";
 import "./styles/partials/_resets.scss";
 import Profile from "./pages/Profile/Profile";
 import "./App.scss";
-import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   return (
