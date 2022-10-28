@@ -10,12 +10,17 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__logo {
+    margin-bottom: 10rem;
+  }
   &__button {
     display: flex;
     align-items: center;
     margin-top: 1.6rem;
     text-decoration: none;
     color: inherit;
+    margin-left: 1rem;
   }
   &__text {
     padding-left: 1rem;

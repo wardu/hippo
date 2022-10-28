@@ -1,18 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sidebar from "./Components/Sidebar";
+import Sidebar from "./Components/Sidebar/Sidebar";
+import Dashboard from "./Components/Dashboard/Dashboard";
 import "./styles/partials/_resets.scss";
 import Profile from "./pages/Profile/Profile";
 import "./App.scss";
-import Dashboard from "./Components/Dashboard/Dashboard";
 
 function App() {
   return (
     <BrowserRouter>
       <section className="wrapper">
-        <div className="sidebar-component">
-          <Sidebar />
-        </div>
-        <div className="allroutes">
+        <Sidebar />
+        <div className="profile">
           <Routes>
             <Route path="/" element={<Profile />}></Route>
             <Route path="/dashboard" element={<Dashboard />}></Route>

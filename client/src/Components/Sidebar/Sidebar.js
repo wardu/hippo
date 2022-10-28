@@ -1,20 +1,18 @@
 import "./Sidebar.scss";
-import profile from "../assets/icons/profile-icon.svg";
-import dashboard from "../assets/icons/dashboard-icon.svg";
-import wallet from "../assets/icons/wallet-icon.svg";
-import settings from "../assets/icons/settings-icon.svg";
-import logout from "../assets/icons/logout-icon.svg";
-import { Link } from "react-router-dom";
-
+import profile from "../../assets/icons/profile-icon.svg";
+import dashboard from "../../assets/icons/dashboard-icon.svg";
+import wallet from "../../assets/icons/wallet-icon.svg";
+import settings from "../../assets/icons/settings-icon.svg";
+import logout from "../../assets/icons/logout-icon.svg";
+import logo from "../../assets/logo/LOGO.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  
-
   return (
     <>
       <div className="sidebar">
         <div className="sidebar__wrapper">
-          <img src="#" alt="logo" className="siderbar__logo" />
+          <img src={logo} alt="logo" className="sidebar__logo" />
           <Link className="sidebar__button" to="/">
             <img src={profile} alt="icon" className="sidebar__icon" />
             <p className="sidebar__text">Profile</p>

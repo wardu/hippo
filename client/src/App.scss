@@ -1,14 +1,19 @@
 @use "./styles/partials/fonts" as *;
 @use "./styles/partials/resets" as *;
+@use "./styles/partials/variables" as *;
 
 .wrapper {
-    display: flex;
+  display: flex;
 }
 
-.sidebar-component{
-    width: 20%;
+.profile {
+  background-color: $background-colour;
+}
+
+.sidebar-component {
+  width: 20%;
 }
 
 .allroutes {
-    width: 80%;
+  width: 80%;
 }

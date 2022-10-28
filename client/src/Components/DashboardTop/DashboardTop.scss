@@ -1,0 +1,87 @@
+@use "../../styles/partials/variables" as *;
+
+.dashboardTop {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem;
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__welcome,
+  &__text,
+  &__date {
+    color: #f5f4f5;
+  }
+
+  &__welcome {
+    width: 60%;
+    font-size: 4.2rem;
+  }
+
+  &__text {
+    padding-bottom: 2rem;
+  }
+
+  &__switcher {
+    display: flex;
+    width: 19.8rem;
+    height: 5.2rem;
+    background-color: $secondary-colour;
+    border-radius: 20px;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &__value {
+    width: 50%;
+    height: 30px;
+    color: $tertiary-colour;
+    margin: 10px;
+    text-align: center;
+    &--active {
+      background-color: $background-colour;
+      border-radius: 20px;
+      color: white;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    width: 630px;
+    height: 78px;
+    background-color: $secondary-colour;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  &__stats-wrapper {
+    width: 33.3%;
+    text-align: center;
+    &--middle {
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+  }
+
+  &__title {
+    font-size: 1.4rem;
+  }
+
+  &__provider-wrapper {
+    background-color: $primary-colour;
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  &__provider-logo {
+    width: 90%;
+  }
+}
