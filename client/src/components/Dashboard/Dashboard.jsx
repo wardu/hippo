@@ -89,7 +89,7 @@ const Dashboard = () => {
                           <p>Saved so far</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>-£27.71 🔻</p>
+                          <p>£{saving} ❇️</p>
                         </div>
                       </li>
                       <li className="data-cards__item">
@@ -97,7 +97,7 @@ const Dashboard = () => {
                           <p>Reduction in emissions</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>10.12% 🔻</p>
+                          <p>{(saving / 40) * 100}% 🔻</p>
                         </div>
                       </li>
                     </ul>
@@ -114,7 +114,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('washine machine', 15);
+                  toggleChart('washine machine', 7);
                 }}
               >
                 <li className="advices__item">
@@ -135,7 +135,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('tumble dryer', 20);
+                  toggleChart('tumble dryer', 10);
                 }}
               >
                 <li className="advices__item">
@@ -154,7 +154,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('dish washer', 16);
+                  toggleChart('dish washer', 7);
                 }}
               >
                 <li className="advices__item">
