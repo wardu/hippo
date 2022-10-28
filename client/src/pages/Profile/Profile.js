@@ -4,6 +4,7 @@ import "./Profile.scss";
 import frame65 from "../../assets/icons/Frame 65.png";
 import frame80 from "../../assets/icons/Frame 80.png";
 import Frame13 from "../../assets/icons/Frame 13.png";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   return (
@@ -15,7 +16,7 @@ export default function Profile() {
             <img className="profile__emoji"  src={lightbulb} alt="light bulb" />
             <h3 className="profile__headerOne">Good News!</h3>
             <h4 className="profile__intro">Your energy usage for the month is ready to view. Let's save the planet.</h4>
-            <button className="profile__button">Lets do it!</button>
+            <Link to="/dashboard"> <button className="profile__button">Lets do it!</button></Link>
           </div>
 
           <div className="profile__wrapperTwo">
