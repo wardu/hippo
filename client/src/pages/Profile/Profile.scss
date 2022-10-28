@@ -1,4 +1,124 @@
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/resets" as *;
 
-.profilepage {
+
+.profile {
+  padding: 5rem 3rem;
+  background-color: #373737;
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: white;
+    padding-bottom: 6rem;
+  }
+
+  &__container {
     display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+
+
+
+  &__wrapOne {
+    display: flex;
+  }
+
+
+  &__wrapperOne {
+    background-color: white;
+    width: 65%;
+border: 1px solid;
+padding: 2rem;
+border-radius: 15px;
+box-shadow: 1px 3px rgb(55, 51, 51);
+  }
+   &__emoji {
+    padding-bottom: 2rem;
+
+   }
+
+   &__headerOne{
+    padding-bottom: 2rem;
+    font-weight: 500;
+    
+   }
+
+   &__intro {
+    padding-bottom: 2rem;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: #424242;
+   }
+
+   &__button {
+    width: 85%;
+    height: 3.5rem;
+    border-radius: 10px;
+    color: white;
+    background-color: #373737;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+
+   }
+
+   &__wrapperTwo{
+    margin-top: 2rem;
+    background-color: white;
+    width: 65%;
+border: 1px solid;
+padding: 5rem 2rem;
+border-radius: 15px;
+box-shadow: 1px 3px rgb(55, 51, 51);
+   }
+
+   &__key {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    padding-bottom: 1.2rem;
+   }
+
+   &__value {
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    padding-bottom: 3.6rem;
+   }
+
+   &__headerTwo {
+    font-size: 3rem;
+    font-weight: 500;
+    color: white;
+    padding-bottom: 4rem;
+   }
+
+   &__piechart-img{
+    width: 14rem;
+    height: 14rem;
+    margin-top: 1rem;
+    margin-bottom: 1.7rem;
+   }
+
+   &__piechart-imgtwo {
+    width: 16.8rem;
+    height: 16.8rem;
+   }
+
+   &__piechart-text {
+    font-size: 1.6rem;
+    font-weight: 400;
+    width: 60%;
+    color: white;
+    text-align: center;
+    padding-bottom: 5rem;
+   }
+
+   &__piechart {
+width: 50%;
+}
+
 }

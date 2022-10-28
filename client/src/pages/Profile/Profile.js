@@ -3,71 +3,59 @@ import lightbulb from "../../assets/icons/lightbulb.svg";
 import "./Profile.scss";
 import frame65 from "../../assets/icons/Frame 65.png";
 import frame80 from "../../assets/icons/Frame 80.png";
-import Emission1 from "../../assets/icons/Emission 1.png";
-import Emission2 from "../../assets/icons/Emission 2.png";
+import Frame13 from "../../assets/icons/Frame 13.png";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   return (
-    <div>
-      <h1>My Profile</h1>
-      <div className="profilepage"> 
-      <div>
-        <div>
-          <img src={lightbulb} alt="light bulb" />
-          <h3>Tell us your latest energy bill and lets save the planet</h3>
-          <button>Lets do it!</button>
-        </div>
+    <div className="profile">
+      <h1 className="profile__title">My Profile</h1>
+      <div className="profile__container">
+        <div className="profile__containerOne">
+          <div className="profile__wrapperOne">
+            <img className="profile__emoji"  src={lightbulb} alt="light bulb" />
+            <h3 className="profile__headerOne">Good News!</h3>
+            <h4 className="profile__intro">Your energy usage for the month is ready to view. Let's save the planet.</h4>
+            <Link to="/dashboard"> <button className="profile__button">Lets do it!</button></Link>
+          </div>
 
-        <div>
-          <h2>Contact Information</h2>
-          <h2>Name</h2>
-          <p>Jenny Locke</p>
-          <h2>Email Address</h2>
-          <p>jennylo33@gmail.com</p>
-          <h2>Phone Number</h2>
-          <p>+44764893</p>
-        </div>
-      </div>
-
-      <div>
-        <h2>Impact Goals</h2>
-        <div>
-          <img src={frame65} alt="65% carbon usage" />
-          <h3>Household Carbon Emission Target</h3>
-        </div>
-        <img src={frame80} alt="80% carbon usage" />
-        <h3>Beat your Borough</h3>
-        <div>
-          <h2>Progress</h2>
-          <div>
-            <p>Emission</p>
-            <div>
-              <p>Till date</p>
-              <p>Predicted</p>
-            </div>
-            <img src={Emission1} alt="Emission till date" />
-            <div>
-              <p>Till date</p>
-              <p>Predicted</p>
-            </div>
+          <div className="profile__wrapperTwo">
+            <h2 className="profile__headerOne">Contact Information</h2>
+            <h2 className="profile__key">Name</h2>
+            <p className="profile__value">Jenny Locke</p>
+            <h2 className="profile__key">Email Address</h2>
+            <p className="profile__value">jennylo33@gmail.com</p>
+            <h2 className="profile__key">Phone Number</h2>
+            <p className="profile__value">+44764893</p>
           </div>
         </div>
 
-        <div>
-          <h2>Progress</h2>
-          <div>
-            <p>Green Energy Generated</p>
-            <div>
-              <p>Till date</p>
-              <p>Predicted</p>
+        <div className="profile__containerTwo">
+         
+            <h2 className="profile__headerTwo">Impact Goals</h2>
+            <div className="profile__wrapOne"> 
+            <div className="profile__piechart">
+              <img className="profile__piechart-img" src={frame65} alt="65% carbon usage" />
+
+              <h3 className="profile__piechart-text">Household Carbon Emission Target</h3>
             </div>
-            <img src={Emission2} alt="Emission till date" />
-            <div>
-              <p>Till date</p>
-              <p>Predicted</p>
+            <div className="profile__piechart">
+              <img className="profile__piechart-imgtwo" src={frame80} alt="80% carbon usage" />
+              <h3 className="profile__piechart-text">Beat your Borough</h3>
             </div>
-          </div>
-        </div>
+            </div>
+
+            <div>
+            
+             
+                
+                <img src={Frame13} alt="Emission till date" />
+                
+             
+            </div>
+
+            
+          
         </div>
       </div>
     </div>

@@ -1,7 +1,28 @@
 import './Dashboard.scss';
 import DashboardTop from '../DashboardTop/DashboardTop';
+import Plot from 'react-plotly.js';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Dashboard = () => {
+  const [saving, setSaving] = useState(0);
+  const [currentPrice, setCurrentPrice] = useState(40);
+  const [lastClicked, setLastClicked] = useState('');
+
+  const toggleChart = (type, amount) => {
+    if (type === lastClicked) {
+      const totalSaving = saving - amount;
+      setSaving(totalSaving);
+      setLastClicked('');
+      return;
+    }
+
+    const totalSaving = saving + amount;
+    setSaving(totalSaving);
+    setLastClicked(type);
+    return;
+  };
+
   return (
     <>
     <DashboardTop/>
@@ -22,7 +43,33 @@ const Dashboard = () => {
               </div>
             </section>
             <section className="graph">
-              <div className="graph__container1">GRAPH</div>
+              <div className="graph__container1">
+                <div className="plot-container">
+                  <Plot
+                    data={[
+                      {
+                        type: 'bar',
+                        color: 'red',
+                        x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
+                        y: [50, 30, 20, 33, 44, currentPrice - saving],
+                        marker: {
+                          color: [
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            'rgba(255, 0, 0, 0.2)',
+                            '#E9BFBB',
+                          ],
+                        },
+                      },
+                    ]}
+                    layout={{ width: 500, height: 400, title: 'Electricity' }}
+                  />
+                </div>
+                <div id="myDiv"></div>
+              </div>
               <div className="graph__container2">
                 <div className="data">
                   <div className="data-title">Predicted for</div>
@@ -44,7 +91,7 @@ const Dashboard = () => {
                           <p>Saved so far</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>-£27.71</p>
+                          <p>-£27.71 🔻</p>
                         </div>
                       </li>
                       <li className="data-cards__item">
@@ -52,7 +99,7 @@ const Dashboard = () => {
                           <p>Reduction in emissions</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>10.12%</p>
+                          <p>10.12% 🔻</p>
                         </div>
                       </li>
                     </ul>
@@ -66,11 +113,14 @@ const Dashboard = () => {
               <h2>Suggestions to reduce energy consumption</h2>
             </div>
             <section className="advices">
-              <ul className="advices__card">
+              <ul
+                className="advices__card"
+                onClick={() => {
+                  toggleChart('washine machine', 15);
+                }}
+              >
                 <li className="advices__item">
-                  <div className="advices__left">
-                    <input type="radio" />
-                  </div>
+                  <div className="advices__left"></div>
                   <div className="advices__right">
                     <h3 className="advices__title">
                       Careful with your washing
@@ -84,11 +134,14 @@ const Dashboard = () => {
               </ul>
             </section>
             <section className="advices">
-              <ul className="advices__card">
+              <ul
+                className="advices__card"
+                onClick={() => {
+                  toggleChart('tumble dryer', 20);
+                }}
+              >
                 <li className="advices__item">
-                  <div className="advices__left">
-                    <input type="radio" />
-                  </div>
+                  <div className="advices__left"></div>
                   <div className="advices__right">
                     <h3 className="advices__title">Avoid the tumble dryer</h3>
                     <p className="advices__body">
@@ -100,13 +153,18 @@ const Dashboard = () => {
               </ul>
             </section>
             <section className="advices">
-              <ul className="advices__card">
+              <ul
+                className="advices__card"
+                onClick={() => {
+                  toggleChart('dish washer', 16);
+                }}
+              >
                 <li className="advices__item">
                   <div className="advices__left">
-                    <input type="radio" />
+                    {/* <input type="radio" /> */}
                   </div>
                   <div className="advices__right">
-                    <h3 className="advices__title">Fill you dishwasher</h3>
+                    <h3 className="advices__title">Fill your dishwasher</h3>
                     <p className="advices__body">
                       Only run your dishwasher when it is full to reduce the
                       amount of water you use
