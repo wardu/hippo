@@ -4,22 +4,22 @@ import dashboard from "../assets/icons/dashboard-icon.svg";
 import wallet from "../assets/icons/wallet-icon.svg";
 import settings from "../assets/icons/settings-icon.svg";
 import logout from "../assets/icons/logout-icon.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Sidebar = () => {
-  const navigate = useNavigate();
+  
 
   return (
     <>
       <div className="sidebar">
         <div className="sidebar__wrapper">
           <img src="#" alt="logo" className="siderbar__logo" />
-          <div onClick={()=>navigate("/")} className="sidebar__button">
+          <Link className="sidebar__button" to="/">
             <img src={profile} alt="icon" className="sidebar__icon" />
             <p className="sidebar__text">Profile</p>
-          </div>
-          <Link className="sidebar__button" to="/">
+          </Link>
+          <Link className="sidebar__button" to="/dashboard">
             <img src={dashboard} alt="icon" className="sidebar__icon" />
             <p className="sidebar__text">Dashboard</p>
           </Link>
