@@ -9,18 +9,40 @@ const Dashboard = () => {
   const [currentPrice, setCurrentPrice] = useState(40);
   const [lastClicked, setLastClicked] = useState('');
 
-  const toggleChart = (type, amount) => {
-    if (type === lastClicked) {
-      const totalSaving = saving - amount;
-      setSaving(totalSaving);
-      setLastClicked('');
+  const [washingMachineToggle, setWashingMachineToggle] = useState(false);
+
+  const toggleWashingMachine = (amount) => {
+    setWashingMachineToggle(!washingMachineToggle);
+
+    if (washingMachineToggle) {
+      setSaving(saving - amount);
       return;
     }
+    setSaving(amount + saving);
+  };
 
-    const totalSaving = saving + amount;
-    setSaving(totalSaving);
-    setLastClicked(type);
-    return;
+  const [dishWashingToggle, setDishWashingToggle] = useState(false);
+
+  const toggleDishWashing = (amount) => {
+    setDishWashingToggle(!dishWashingToggle);
+
+    if (dishWashingToggle) {
+      setSaving(saving - amount);
+      return;
+    }
+    setSaving(amount + saving);
+  };
+
+  const [tumbleDryToggle, setTumbleDryToggle] = useState(false);
+
+  const toggleTubbleDryer = (amount) => {
+    setTumbleDryToggle(!tumbleDryToggle);
+
+    if (tumbleDryToggle) {
+      setSaving(saving - amount);
+      return;
+    }
+    setSaving(amount + saving);
   };
 
   return (
@@ -91,7 +113,7 @@ const Dashboard = () => {
                           <p>Saved so far</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>-£27.71 🔻</p>
+                          <p>£{saving} ❇️</p>
                         </div>
                       </li>
                       <li className="data-cards__item">
@@ -99,7 +121,7 @@ const Dashboard = () => {
                           <p>Reduction in emissions</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>10.12% 🔻</p>
+                          <p>{(saving / 40) * 100}% 🔻</p>
                         </div>
                       </li>
                     </ul>
@@ -116,7 +138,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('washine machine', 15);
+                  toggleWashingMachine(7);
                 }}
               >
                 <li className="advices__item">
@@ -137,7 +159,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('tumble dryer', 20);
+                  toggleTubbleDryer(10);
                 }}
               >
                 <li className="advices__item">
@@ -156,7 +178,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('dish washer', 16);
+                  toggleDishWashing(7);
                 }}
               >
                 <li className="advices__item">
