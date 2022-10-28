@@ -8,20 +8,6 @@ const Dashboard = () => {
   const [currentPrice, setCurrentPrice] = useState(40);
   const [lastClicked, setLastClicked] = useState('');
 
-  //   const toggleChart = (type, amount) => {
-  //     if (type === lastClicked) {
-  //       const totalSaving = saving - amount;
-  //       setSaving(totalSaving);
-  //       setLastClicked('');
-  //       return;
-  //     }
-
-  //     const totalSaving = saving + amount;
-  //     setSaving(totalSaving);
-  //     setLastClicked(type);
-  //     return;
-  //   };
-
   const [washingMachineToggle, setWashingMachineToggle] = useState(false);
 
   const toggleWashingMachine = (amount) => {
