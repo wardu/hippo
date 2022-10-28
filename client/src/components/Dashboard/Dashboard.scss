@@ -1,0 +1,86 @@
+.dashboard {
+  border-radius: 20px;
+  width: 1044px;
+  min-height: 700px;
+  background-color: #2b2d42;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &__container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  &__upper {
+    display: flex;
+    justify-content: space-around;
+
+    &-second-container {
+      border-bottom: 4px solid #f8f32b;
+    }
+    &-first-container {
+      border-bottom: 4px solid #f8f32b;
+    }
+  }
+}
+.graph {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &__container1 {
+    border-radius: 20px;
+    width: 568px;
+    height: 477px;
+    background-color: #8d99ae;
+  }
+  &__container2 {
+    border-radius: 10px;
+    position: relative;
+    left: 30px;
+    width: 50%;
+    width: 269px;
+    height: 385px;
+    background-color: #8d99ae;
+  }
+}
+.data {
+  &-month {
+    border-bottom: 3px solid #f8f32b;
+  }
+}
+
+.advices {
+  &__card {
+    border: 2px solid #8d99ae;
+    border-radius: 10px;
+  }
+  &__card:hover {
+    // border: transparent;
+    background-color: #8d99ae;
+  }
+  &__item {
+    display: flex;
+  }
+  &__left {
+    & input {
+      position: relative;
+      top: 27px;
+      right: 13px;
+    }
+  }
+  &__body {
+    position: relative;
+    bottom: 17px;
+  }
+}

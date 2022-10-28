@@ -1,3 +1,4 @@
+
 import { BrowserRouter } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 import "./styles/partials/_resets.scss";
@@ -7,8 +8,10 @@ function App() {
     <BrowserRouter>
       <section className="wrapper">
         <Sidebar />
+        <Dashboard />
       </section>
     </BrowserRouter>
+
   );
 }
 
