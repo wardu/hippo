@@ -8,10 +8,6 @@ const Dashboard = () => {
   const [currentPrice, setCurrentPrice] = useState(40);
   const [lastClicked, setLastClicked] = useState('');
 
-  // variables for changing the last bar
-  //   let basePrice = 40;
-  //   let changedPrice = saving;
-
   const toggleChart = (type, amount) => {
     if (type === lastClicked) {
       const totalSaving = saving - amount;
@@ -51,8 +47,20 @@ const Dashboard = () => {
                     data={[
                       {
                         type: 'bar',
+                        color: 'red',
                         x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
                         y: [50, 30, 20, 33, 44, currentPrice - saving],
+                        marker: {
+                          color: [
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            '#E9BFBB',
+                            'rgba(255, 0, 0, 0.2)',
+                            '#E9BFBB',
+                          ],
+                        },
                       },
                     ]}
                     layout={{ width: 500, height: 400, title: 'Electricity' }}
@@ -81,7 +89,7 @@ const Dashboard = () => {
                           <p>Saved so far</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>-£27.71</p>
+                          <p>-£27.71 🔻</p>
                         </div>
                       </li>
                       <li className="data-cards__item">
@@ -89,7 +97,7 @@ const Dashboard = () => {
                           <p>Reduction in emissions</p>
                         </div>
                         <div className="data-cards__figure">
-                          <p>10.12%</p>
+                          <p>10.12% 🔻</p>
                         </div>
                       </li>
                     </ul>
@@ -103,16 +111,14 @@ const Dashboard = () => {
               <h2>Suggestions to reduce energy consumption</h2>
             </div>
             <section className="advices">
-              <ul className="advices__card">
+              <ul
+                className="advices__card"
+                onClick={() => {
+                  toggleChart('washine machine', 15);
+                }}
+              >
                 <li className="advices__item">
-                  <div
-                    className="advices__left"
-                    onClick={() => {
-                      toggleChart('washine machine', 15);
-                    }}
-                  >
-                    <input type="radio" />
-                  </div>
+                  <div className="advices__left"></div>
                   <div className="advices__right">
                     <h3 className="advices__title">
                       Careful with your washing
@@ -126,16 +132,14 @@ const Dashboard = () => {
               </ul>
             </section>
             <section className="advices">
-              <ul className="advices__card">
+              <ul
+                className="advices__card"
+                onClick={() => {
+                  toggleChart('tumble dryer', 20);
+                }}
+              >
                 <li className="advices__item">
-                  <div
-                    className="advices__left"
-                    onClick={() => {
-                      toggleChart('tumble dryer', 20);
-                    }}
-                  >
-                    <input type="radio" />
-                  </div>
+                  <div className="advices__left"></div>
                   <div className="advices__right">
                     <h3 className="advices__title">Avoid the tumble dryer</h3>
                     <p className="advices__body">
@@ -147,15 +151,15 @@ const Dashboard = () => {
               </ul>
             </section>
             <section className="advices">
-              <ul className="advices__card">
+              <ul
+                className="advices__card"
+                onClick={() => {
+                  toggleChart('dish washer', 16);
+                }}
+              >
                 <li className="advices__item">
-                  <div
-                    className="advices__left"
-                    onClick={() => {
-                      toggleChart('dish washer', 16);
-                    }}
-                  >
-                    <input type="radio" />
+                  <div className="advices__left">
+                    {/* <input type="radio" /> */}
                   </div>
                   <div className="advices__right">
                     <h3 className="advices__title">Fill your dishwasher</h3>
