@@ -15,10 +15,10 @@ const Sidebar = () => {
       <div className="sidebar">
         <div className="sidebar__wrapper">
           <img src={logo} alt="logo" className="sidebar__logo" />
-          <div onClick={() => navigate("/")} className="sidebar__button">
+          <Link className="sidebar__button" to="/">
             <img src={profile} alt="icon" className="sidebar__icon" />
             <p className="sidebar__text">Profile</p>
-          </div>
+          </Link>
           <Link className="sidebar__button" to="/dashboard">
             <img src={dashboard} alt="icon" className="sidebar__icon" />
             <p className="sidebar__text">Dashboard</p>
