@@ -17,6 +17,11 @@
     justify-content: space-around;
     align-items: center;
   }
+  &__lower-header {
+    & h2 {
+      margin-top: 10px;
+    }
+  }
 }
 .heading {
   display: flex;
@@ -64,6 +69,8 @@
   &__card {
     border: 2px solid #8d99ae;
     border-radius: 10px;
+    padding: 15px 25px;
+    margin: 17px;
   }
   &__card:hover {
     // border: transparent;
@@ -81,6 +88,5 @@
   }
   &__body {
     position: relative;
-    bottom: 17px;
   }
 }

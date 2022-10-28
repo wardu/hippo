@@ -10,8 +10,8 @@ const Dashboard = () => {
     },
   ];
 
+  // variables for changing the last bar
   let basePrice = 40;
-  //   Plot.newPlot('myDiv', data);
   let changedPrice = basePrice - 20;
   return (
     <>
@@ -33,16 +33,18 @@ const Dashboard = () => {
             </section>
             <section className="graph">
               <div className="graph__container1">
-                <Plot
-                  data={[
-                    {
-                      type: 'bar',
-                      x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
-                      y: [50, 30, 20, 33, 44, changedPrice],
-                    },
-                  ]}
-                  layout={{ width: 520, height: 240, title: 'Electricity' }}
-                />
+                <div className="plot-container">
+                  <Plot
+                    data={[
+                      {
+                        type: 'bar',
+                        x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
+                        y: [50, 30, 20, 33, 44, changedPrice],
+                      },
+                    ]}
+                    layout={{ width: 500, height: 400, title: 'Electricity' }}
+                  />
+                </div>
                 <div id="myDiv"></div>
               </div>
               <div className="graph__container2">
@@ -128,7 +130,7 @@ const Dashboard = () => {
                     <input type="radio" />
                   </div>
                   <div className="advices__right">
-                    <h3 className="advices__title">Fill you dishwasher</h3>
+                    <h3 className="advices__title">Fill your dishwasher</h3>
                     <p className="advices__body">
                       Only run your dishwasher when it is full to reduce the
                       amount of water you use

@@ -1,7 +1,7 @@
-
-import { BrowserRouter } from "react-router-dom";
-import Sidebar from "./Components/Sidebar";
-import "./styles/partials/_resets.scss";
+import { BrowserRouter } from 'react-router-dom';
+import Sidebar from './Components/Sidebar';
+import Dashboard from './Components/Dashboard/Dashboard';
+import './styles/partials/_resets.scss';
 
 function App() {
   return (
@@ -11,7 +11,6 @@ function App() {
         <Dashboard />
       </section>
     </BrowserRouter>
-
   );
 }
 
