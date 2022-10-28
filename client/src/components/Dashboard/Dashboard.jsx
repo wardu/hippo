@@ -1,6 +1,18 @@
 import './Dashboard.scss';
+import Plot from 'react-plotly.js';
 
 const Dashboard = () => {
+  let data = [
+    {
+      x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
+      y: [20, 14, 23, 17, 18, 20],
+      type: 'bar',
+    },
+  ];
+
+  let basePrice = 40;
+  //   Plot.newPlot('myDiv', data);
+  let changedPrice = basePrice - 20;
   return (
     <>
       <div className="dashboard">
@@ -20,7 +32,19 @@ const Dashboard = () => {
               </div>
             </section>
             <section className="graph">
-              <div className="graph__container1">GRAPH</div>
+              <div className="graph__container1">
+                <Plot
+                  data={[
+                    {
+                      type: 'bar',
+                      x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
+                      y: [50, 30, 20, 33, 44, changedPrice],
+                    },
+                  ]}
+                  layout={{ width: 520, height: 240, title: 'Electricity' }}
+                />
+                <div id="myDiv"></div>
+              </div>
               <div className="graph__container2">
                 <div className="data">
                   <div className="data-title">Predicted for</div>
