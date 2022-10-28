@@ -8,18 +8,54 @@ const Dashboard = () => {
   const [currentPrice, setCurrentPrice] = useState(40);
   const [lastClicked, setLastClicked] = useState('');
 
-  const toggleChart = (type, amount) => {
-    if (type === lastClicked) {
-      const totalSaving = saving - amount;
-      setSaving(totalSaving);
-      setLastClicked('');
+  //   const toggleChart = (type, amount) => {
+  //     if (type === lastClicked) {
+  //       const totalSaving = saving - amount;
+  //       setSaving(totalSaving);
+  //       setLastClicked('');
+  //       return;
+  //     }
+
+  //     const totalSaving = saving + amount;
+  //     setSaving(totalSaving);
+  //     setLastClicked(type);
+  //     return;
+  //   };
+
+  const [washingMachineToggle, setWashingMachineToggle] = useState(false);
+
+  const toggleWashingMachine = (amount) => {
+    setWashingMachineToggle(!washingMachineToggle);
+
+    if (washingMachineToggle) {
+      setSaving(saving - amount);
       return;
     }
+    setSaving(amount + saving);
+  };
 
-    const totalSaving = saving + amount;
-    setSaving(totalSaving);
-    setLastClicked(type);
-    return;
+  const [dishWashingToggle, setDishWashingToggle] = useState(false);
+
+  const toggleDishWashing = (amount) => {
+    setDishWashingToggle(!dishWashingToggle);
+
+    if (dishWashingToggle) {
+      setSaving(saving - amount);
+      return;
+    }
+    setSaving(amount + saving);
+  };
+
+  const [tumbleDryToggle, setTumbleDryToggle] = useState(false);
+
+  const toggleTubbleDryer = (amount) => {
+    setTumbleDryToggle(!tumbleDryToggle);
+
+    if (tumbleDryToggle) {
+      setSaving(saving - amount);
+      return;
+    }
+    setSaving(amount + saving);
   };
 
   return (
@@ -114,7 +150,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('washine machine', 7);
+                  toggleWashingMachine(7);
                 }}
               >
                 <li className="advices__item">
@@ -135,7 +171,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('tumble dryer', 10);
+                  toggleTubbleDryer(10);
                 }}
               >
                 <li className="advices__item">
@@ -154,7 +190,7 @@ const Dashboard = () => {
               <ul
                 className="advices__card"
                 onClick={() => {
-                  toggleChart('dish washer', 7);
+                  toggleDishWashing(7);
                 }}
               >
                 <li className="advices__item">
