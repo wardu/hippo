@@ -1,0 +1,19 @@
+[
+    {
+        "id": "1",
+        "suggestion": "Careful with your washing",
+        "savings": "28"
+    },
+
+    {
+        "id": "2",
+        "suggestion": "Avoid the tumble dryer",
+        "savings": "30"
+    },
+
+    {
+        "id": "1",
+        "suggestion": "Fill your dishwater",
+        "savings": "48"
+    }
+]

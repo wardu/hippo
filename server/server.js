@@ -2,7 +2,11 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-app.get('/', (req, res) => {
+const fs = require("fs");
+
+app.get('/:id', (req, res) => {
+
+  const id = req.params.id;
   res.send('Hello World!');
 });
 

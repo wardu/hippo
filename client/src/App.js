@@ -14,8 +14,7 @@ function App() {
         <div className="profile">
           <Routes>
             <Route path="/" element={<Profile />}></Route>
-
-            <Route path="/dashboard"></Route>
+            <Route path="/dashboard" element={<Dashboard />}></Route>
           </Routes>
         </div>
       </section>
