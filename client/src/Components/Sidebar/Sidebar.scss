@@ -6,6 +6,10 @@
   flex-direction: column;
   justify-content: space-between;
 
+  &__container {
+    position: fixed;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;

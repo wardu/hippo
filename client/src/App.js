@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <section className="wrapper">
         <Sidebar />
-        <div className="profile">
+        <div className="main">
           <Routes>
             <Route path="/" element={<Profile />}></Route>
             <Route path="/dashboard" element={<Dashboard />}></Route>
