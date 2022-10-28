@@ -1,18 +1,31 @@
 import './Dashboard.scss';
 import Plot from 'react-plotly.js';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Dashboard = () => {
-  let data = [
-    {
-      x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
-      y: [20, 14, 23, 17, 18, 20],
-      type: 'bar',
-    },
-  ];
+  const [saving, setSaving] = useState(0);
+  const [currentPrice, setCurrentPrice] = useState(40);
+  const [lastClicked, setLastClicked] = useState('');
 
   // variables for changing the last bar
-  let basePrice = 40;
-  let changedPrice = basePrice - 20;
+  //   let basePrice = 40;
+  //   let changedPrice = saving;
+
+  const toggleChart = (type, amount) => {
+    if (type === lastClicked) {
+      const totalSaving = saving - amount;
+      setSaving(totalSaving);
+      setLastClicked('');
+      return;
+    }
+
+    const totalSaving = saving + amount;
+    setSaving(totalSaving);
+    setLastClicked(type);
+    return;
+  };
+
   return (
     <>
       <div className="dashboard">
@@ -39,7 +52,7 @@ const Dashboard = () => {
                       {
                         type: 'bar',
                         x: ['May', 'June', 'July', 'Aug', 'Sept', 'Oct'],
-                        y: [50, 30, 20, 33, 44, changedPrice],
+                        y: [50, 30, 20, 33, 44, currentPrice - saving],
                       },
                     ]}
                     layout={{ width: 500, height: 400, title: 'Electricity' }}
@@ -92,7 +105,12 @@ const Dashboard = () => {
             <section className="advices">
               <ul className="advices__card">
                 <li className="advices__item">
-                  <div className="advices__left">
+                  <div
+                    className="advices__left"
+                    onClick={() => {
+                      toggleChart('washine machine', 15);
+                    }}
+                  >
                     <input type="radio" />
                   </div>
                   <div className="advices__right">
@@ -110,7 +128,12 @@ const Dashboard = () => {
             <section className="advices">
               <ul className="advices__card">
                 <li className="advices__item">
-                  <div className="advices__left">
+                  <div
+                    className="advices__left"
+                    onClick={() => {
+                      toggleChart('tumble dryer', 20);
+                    }}
+                  >
                     <input type="radio" />
                   </div>
                   <div className="advices__right">
@@ -126,7 +149,12 @@ const Dashboard = () => {
             <section className="advices">
               <ul className="advices__card">
                 <li className="advices__item">
-                  <div className="advices__left">
+                  <div
+                    className="advices__left"
+                    onClick={() => {
+                      toggleChart('dish washer', 16);
+                    }}
+                  >
                     <input type="radio" />
                   </div>
                   <div className="advices__right">
