@@ -8,8 +8,6 @@ import logo from "../../assets/logo/LOGO.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       <div className="sidebar">
