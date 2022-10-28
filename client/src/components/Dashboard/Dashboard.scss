@@ -2,8 +2,7 @@
   border-radius: 20px;
   width: 1044px;
   min-height: 700px;
-  background-color: #2b2d42;
-  color: #ffffff;
+  background-color: #f5f4f5;
 
   display: flex;
   flex-direction: column;
@@ -34,13 +33,24 @@
     justify-content: space-around;
 
     &-second-container {
-      border-bottom: 4px solid #f8f32b;
+      border-bottom: 4px solid black;
     }
     &-first-container {
-      border-bottom: 4px solid #f8f32b;
+      border-bottom: 4px solid black;
     }
   }
 }
+/* Polygon 4 */
+.polygon {
+  position: absolute;
+  width: 38px;
+  height: 27px;
+  left: 107px;
+  top: 248px;
+
+  background: #da1717;
+}
+
 .graph {
   display: flex;
   flex-direction: row;
@@ -50,7 +60,7 @@
     border-radius: 20px;
     width: 568px;
     height: 477px;
-    background-color: #8d99ae;
+    background-color: white;
   }
   &__container2 {
     border-radius: 10px;
@@ -59,7 +69,7 @@
     width: 50%;
     width: 269px;
     height: 385px;
-    background-color: #8d99ae;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +80,7 @@
 }
 .data {
   &-month {
-    border-bottom: 3px solid #f8f32b;
+    border-bottom: 3px solid black;
   }
 }
 
