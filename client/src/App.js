@@ -1,10 +1,17 @@
-import Dashboard from './components/Dashboard/Dashboard';
+
+import { BrowserRouter } from "react-router-dom";
+import Sidebar from "./Components/Sidebar";
+import "./styles/partials/_resets.scss";
 
 function App() {
   return (
-    <>
-      <Dashboard />
-    </>
+    <BrowserRouter>
+      <section className="wrapper">
+        <Sidebar />
+        <Dashboard />
+      </section>
+    </BrowserRouter>
+
   );
 }
 
