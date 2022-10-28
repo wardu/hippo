@@ -6,8 +6,10 @@
   display: flex;
 }
 
-.profile {
+.main {
   background-color: $background-colour;
+  margin-left: 20vw;
+  padding: 0 2rem;
 }
 
 .sidebar-component {

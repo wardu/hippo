@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <>
+    <div className="sidebar__container">
       <div className="sidebar">
         <div className="sidebar__wrapper">
           <img src={logo} alt="logo" className="sidebar__logo" />
@@ -35,7 +35,7 @@ const Sidebar = () => {
           <p className="sidebar__text">Logout</p>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

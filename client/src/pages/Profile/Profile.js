@@ -13,10 +13,16 @@ export default function Profile() {
       <div className="profile__container">
         <div className="profile__containerOne">
           <div className="profile__wrapperOne">
-            <img className="profile__emoji"  src={lightbulb} alt="light bulb" />
+            <img className="profile__emoji" src={lightbulb} alt="light bulb" />
             <h3 className="profile__headerOne">Good News!</h3>
-            <h4 className="profile__intro">Your energy usage for the month is ready to view. Let's save the planet.</h4>
-            <Link to="/dashboard"> <button className="profile__button">Lets do it!</button></Link>
+            <h4 className="profile__intro">
+              Your energy usage for the month is ready to view. Let's save the
+              planet.
+            </h4>
+            <Link to="/dashboard">
+              {" "}
+              <button className="profile__button">Lets do it!</button>
+            </Link>
           </div>
 
           <div className="profile__wrapperTwo">
@@ -31,31 +37,32 @@ export default function Profile() {
         </div>
 
         <div className="profile__containerTwo">
-         
-            <h2 className="profile__headerTwo">Impact Goals</h2>
-            <div className="profile__wrapOne"> 
+          <h2 className="profile__headerTwo">Impact Goals</h2>
+          <div className="profile__wrapOne">
             <div className="profile__piechart">
-              <img className="profile__piechart-img" src={frame65} alt="65% carbon usage" />
+              <img
+                className="profile__piechart-img"
+                src={frame65}
+                alt="65% carbon usage"
+              />
 
-              <h3 className="profile__piechart-text">Household Carbon Emission Target</h3>
+              <h3 className="profile__piechart-text">
+                Household Carbon Footprint Reduction
+              </h3>
             </div>
             <div className="profile__piechart">
-              <img className="profile__piechart-imgtwo" src={frame80} alt="80% carbon usage" />
+              <img
+                className="profile__piechart-imgtwo"
+                src={frame80}
+                alt="80% carbon usage"
+              />
               <h3 className="profile__piechart-text">Beat your Borough</h3>
             </div>
-            </div>
+          </div>
 
-            <div>
-            
-             
-                
-                <img src={Frame13} alt="Emission till date" />
-                
-             
-            </div>
-
-            
-          
+          <div>
+            <img src={Frame13} alt="Emission till date" />
+          </div>
         </div>
       </div>
     </div>
