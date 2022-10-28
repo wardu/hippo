@@ -49,10 +49,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
     &--active {
-      background-color: $background-colour;
+      background-color: $primary-colour;
       border-radius: 20px;
-      color: white;
     }
   }
 
