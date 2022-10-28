@@ -1,8 +1,10 @@
 import './Dashboard.scss';
+import DashboardTop from '../DashboardTop/DashboardTop';
 
 const Dashboard = () => {
   return (
     <>
+    <DashboardTop/>
       <div className="dashboard">
         <div className="dashboard__container">
           <section className="dashboard__upper">
